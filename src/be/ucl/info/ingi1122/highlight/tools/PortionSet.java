@@ -1,6 +1,6 @@
 package be.ucl.info.ingi1122.highlight.tools;
 
-pulic class PortionSet{
+public class PortionSet{
 
 	private ArrayList<Portion> portions;
 
@@ -8,5 +8,11 @@ pulic class PortionSet{
 		portions = new ArrayList<Portion>();
 	}
 
-	public void addPortion
+	public void addPortion(Portion portion){
+		for(Portion p:portions){
+			if(portion.end < p.begin)
+				portions.add(portion,1);
+
+		}
+	}
 }
