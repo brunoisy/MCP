@@ -1,8 +1,27 @@
 public class Tools {
 
 	public static Portion[] quoiSurligner(char[] texte, char[][] mots) {
-		return new Portion[0];
+		Portion[] portions = new Portion[mots.length];
+		for (int i = 0; i < mots.length; i++){
+			for (int j = 0; j < texte.length; j++){
+				if(texte[j] == mots[i][0]){
+					int count =1;
+					for(int k = 1; k < mots.length ;k++ ){
+						if(texte[j+k] == mots[i][k]){
+							count ++;
+						}
+					}
+					if(count == mots[i].length){
+						Portion p = new Portion{j,(j+mots[i].length -1)};
+					}
+				}
+			}
+			portions[i] = p;
+		}
+		
+		return portions;
 	}
+	
 	
 	public static boolean contains(char[] texte, char[] mots){
 		
