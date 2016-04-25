@@ -1,26 +1,28 @@
 import java.util.ArrayList;
 
+import java.util.Collections;
+
 public class PortionSet{
 
-	private ArrayList<Portion> portions;
+	private ArrayList<MyPortion> portions;
 
 	public PortionSet(){
-		portions = new ArrayList<Portion>();
+		portions = new ArrayList<MyPortion>();
 	}
 
-	public void addPortion(Portion portion){
-		ArrayList<Portion> newPortions;
+	public void addPortion(MyPortion portion){
+		portions.add(portion);
+		Collections.sort(portions);
+		portions.disjoint();
+	}
 
-		for(Portion p:portions){
-			if(portion.getEnd() < p.getBegin())
-				portions.add(1,portion);
-			else
-				if(portion.getBegin() < p.getBegin()){
-					Portion newPortion = new MyPortion(portion.getBegin(), p.getEnd());
-				}
-
+	public void disjoint(){
+		for(Portion p : portions){
+			if(p.)
 		}
 	}
+
+
 
 	public Portion[] getPortions(){
 		return (Portion [])portions.toArray();

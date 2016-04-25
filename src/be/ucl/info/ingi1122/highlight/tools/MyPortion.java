@@ -1,7 +1,7 @@
 /**
  * Created by brunoob on 25.04.16.
  */
-public class MyPortion implements Portion{
+public class MyPortion implements Portion, Comparable<MyPortion>{
 
 	private int begin;
 	private int end;
@@ -17,5 +17,9 @@ public class MyPortion implements Portion{
 
 	public int getEnd(){
 		return end;
+	}
+
+	public int compareTo(MyPortion portion){
+		return this.begin - portion.getBegin();
 	}
 }
