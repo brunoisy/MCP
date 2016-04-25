@@ -1,4 +1,4 @@
-package be.ucl.info.ingi1122.highlight.tools;
+import java.util.ArrayList;
 
 public class PortionSet{
 
@@ -10,9 +10,17 @@ public class PortionSet{
 
 	public void addPortion(Portion portion){
 		for(Portion p:portions){
-			if(portion.end < p.begin)
-				portions.add(portion,1);
+			if(portion.getEnd() < p.getBegin())
+				portions.add(1,portion);
+			else
+				if(portion.getBegin() < p.getBegin()){
+					Portion newPortion = new myPortion(portion.getBegin(), p.getEnd());
+				}
 
 		}
+	}
+
+	public Portion[] getPortions(){
+		return portions.toArray();
 	}
 }

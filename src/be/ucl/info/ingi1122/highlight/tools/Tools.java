@@ -1,5 +1,3 @@
-package be.ucl.info.ingi1122.highlight.tools;
-
 public class Tools {
 
 	public static Portion[] quoiSurligner(char[] texte, char[][] mots) {
