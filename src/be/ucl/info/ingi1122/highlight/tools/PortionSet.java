@@ -6,7 +6,7 @@ public class PortionSet {
 	private ArrayList<MyPortion> portions;
 
 	public PortionSet() {
-		portions = new ArrayList<MyPortion>();
+		portions = new ArrayList<>();
 	}
 
 	public void addPortion(MyPortion portion) {
@@ -16,7 +16,7 @@ public class PortionSet {
 	}
 
 	public void disjoint() {
-		ArrayList<MyPortion> newPortions = new ArrayList<MyPortion>(); //pas très efficace
+		ArrayList<MyPortion> newPortions = new ArrayList<>(); //pas très efficace
 		int begin = 0;
 		int end = 0;
 
