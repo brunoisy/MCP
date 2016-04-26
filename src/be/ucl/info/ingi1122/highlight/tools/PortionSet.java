@@ -1,30 +1,46 @@
 import java.util.ArrayList;
-
 import java.util.Collections;
 
-public class PortionSet{
+public class PortionSet {
 
 	private ArrayList<MyPortion> portions;
 
-	public PortionSet(){
+	public PortionSet() {
 		portions = new ArrayList<MyPortion>();
 	}
 
-	public void addPortion(MyPortion portion){
+	public void addPortion(MyPortion portion) {
 		portions.add(portion);
 		Collections.sort(portions);
-		portions.disjoint();
+		disjoint();
 	}
 
-	public void disjoint(){
-		for(Portion p : portions){
-			if(p.)
+	public void disjoint() {
+		ArrayList<MyPortion> newPortions = new ArrayList<MyPortion>(); //pas très efficace
+		int begin = 0;
+		int end = 0;
+
+		for (int i = 0; i < portions.size(); i++) {
+			Portion thisPortion = portions.get(i);
+			if (i == 0) {
+				begin = thisPortion.getBegin();
+				end = thisPortion.getEnd();
+			} else {
+				if (thisPortion.getBegin() > end) {
+					newPortions.add(new MyPortion(begin, end));
+					begin = thisPortion.getBegin();
+					end = thisPortion.getEnd();
+				} else
+					end = thisPortion.getEnd();
+			}
+			if (i == portions.size() - 1)
+				newPortions.add(new MyPortion(begin, end));
 		}
+		portions = newPortions;
 	}
 
 
-
-	public Portion[] getPortions(){
-		return (Portion [])portions.toArray();
+	public Portion[] getPortions() {
+		return (Portion[]) portions.toArray();
 	}
 }
