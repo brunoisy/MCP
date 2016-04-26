@@ -20,7 +20,31 @@ public class Tools {
 		return portions.getPortions();
 	}
 
-	/*
+
+	public static boolean correspond(char[] texte, char[][] mots) {
+
+		for (int i = 0; i < mots.length; i++) { //pour chaque mot clé
+			boolean containsWord = false;
+			for (int j = 0; j < texte.length; j++) { // pour chaque lettre du texte
+				int count;
+				for (count = 0; count < mots[i].length; count++) {
+					if (texte[j + count] != mots[i][count]) {
+						break;
+					}
+				}
+				if (count == mots[i].length) {
+					containsWord = true;
+					break;
+				}
+			}
+			if (! containsWord)
+				return false;
+		}
+		return true;
+	}
+
+
+		/*
 		public static Portion[] quoiSurligner(char[] texte, char[][] mots) {
 			Portion[] portions = new Portion[mots.length];
 			for (int i = 0; i < mots.length; i++) {
@@ -44,7 +68,7 @@ public class Tools {
 
 			return portions;
 		}
-		*/
+
 
 	public static boolean contains(char[] texte, char[] mots) {
 
@@ -64,7 +88,7 @@ public class Tools {
 		return false;
 	}
 
-	/*
+
 	public static boolean correspond(char[] texte, char[][] mots) {
 
 
@@ -76,27 +100,5 @@ public class Tools {
 		return true;
 	}
 	*/
-
-	public static boolean correspond(char[] texte, char[][] mots) {
-
-		for (int i = 0; i < mots.length; i++) { //pour chaque mot clé
-			boolean containsWord = false;
-			for (int j = 0; j < texte.length; j++) { // pour chaque lettre du texte
-				int count;
-				for (count = 0; count < mots[i].length; count++) {
-					if (texte[j + count] != mots[i][count]) {
-						break;
-					}
-				}
-				if (count == mots[i].length) {
-					containsWord = true;
-					break;
-				}
-			}
-			if (! containsWord)
-				return false;
-		}
-		return true;
-	}
 
 }
