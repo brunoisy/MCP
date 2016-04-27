@@ -1,3 +1,5 @@
+package be.ucl.info.ingi1122.highlight.tools;
+
 /**
  * Created by brunoob on 25.04.16.
  */

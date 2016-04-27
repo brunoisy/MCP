@@ -45,7 +45,7 @@ public class PortionSet {
 
 
 	public Portion[] getPortions() {
-		MyPortion[] portionsArray = new MyPortion[portions.size()];
-		return portions.toArray(portionsArray);
+		MyPortion[] portionsArray = (MyPortion [])portions.toArray(MyPortion[] a);
+		return portionsArray;//(MyPortion []) portions.toArray();//pq besoin de cast?
 	}
 }

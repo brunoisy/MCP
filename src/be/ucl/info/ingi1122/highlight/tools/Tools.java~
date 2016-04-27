@@ -19,7 +19,7 @@ public class Tools {
 					}
 				}
 				if (count == mots[i].length) {
-					portions.addPortion(new MyPortion(j, j + mots[i].length));//"surligner le texte entre l’indice getStart() inclu et getEnd() exclu"
+					portions.addPortion(new MyPortion(j, (j + mots[i].length - 1)));
 				}
 			}
 		}
