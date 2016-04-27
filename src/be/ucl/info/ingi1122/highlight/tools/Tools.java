@@ -11,9 +11,9 @@ public class Tools {
 		PortionSet portions = new PortionSet();
 
 		for (int i = 0; i < mots.length; i++) { //pour chaque mot clé
-			for (int j = 0; j < texte.length; j++) { // pour chaque lettre du texte
+			for (int j = 0; j < texte.length - mots[i].length + 1; j++) { // pour chaque lettre du texte
 				int count;
-				for (count = 0; count < mots[i].length && (j + count < texte.length); count++) {
+				for (count = 0; count < mots[i].length; count++) {
 					if (texte[j + count] != mots[i][count]) {
 						break;
 					}
@@ -31,9 +31,9 @@ public class Tools {
 
 		for (int i = 0; i < mots.length; i++) { //pour chaque mot clé
 			boolean containsWord = false;
-			for (int j = 0; j < texte.length; j++) { // pour chaque lettre du texte
+			for (int j = 0; j < texte.length - mots[i].length + 1; j++) { // pour chaque lettre du texte
 				int count;
-				for (count = 0; (count < mots[i].length) && (j + count < texte.length); count++) {
+				for (count = 0; count < mots[i].length; count++) {
 					if (texte[j + count] != mots[i][count]) {
 						break;
 					}
