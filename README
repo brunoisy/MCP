@@ -1,0 +1,5 @@
+to compile and execute project go in folder src/ then
+
+compile : javac be/ucl/info/ingi1122/highlight/gui/SearchWidget.java
+run : java be.ucl.info.ingi1122.highlight.gui.SearchWidget
+
